@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Add from './pages/Add';
 import Search from './pages/Search';
 import ViewAll from './pages/Viewall';
+import Delete from './pages/Delete';
+import Update from './pages/Update';
 function App() {
   return(
     <BrowserRouter>
@@ -12,6 +14,8 @@ function App() {
       <Route path='/add' element={<Add/>}></Route>
       <Route path='/srch' element={<Search />}></Route>
       <Route path='/get' element={<ViewAll/>}></Route>
+      <Route path='/delete' element={<Delete />}></Route>
+      <Route path='/update' element={<Update/>}></Route>
     </Routes>
     </BrowserRouter>
   )

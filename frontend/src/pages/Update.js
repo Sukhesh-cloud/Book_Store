@@ -1,11 +1,11 @@
-import {React,useState} from 'react';
-import axios from 'axios';
-const API='http://localhost:5000/api/Books/'
+import { useState,React } from "react";
+import axios  from "axios";
 
-export default function Add(){
+const API='http://localhost:5000/api/Books'
+export default function Update(){
     const [form,setForm]=useState({
         bookId:'',bookName:"",pubName:"",dop:"",noPages:"",yop:"",cost:""
-    });
+    })
     const [msg,setMsg]=useState("");
     const [data,setData]=useState(null);
 
@@ -13,21 +13,17 @@ export default function Add(){
         setForm({...form,[e.target.name]:e.target.value});
     }
 
-    const handleSubmit=async(e)=>{
+    const handleSubmit=async (e)=>{
         e.preventDefault();
         try{
-            const data=await axios.post(API,form);
-            console.log(data);
-
-            setMsg(data.data.msg);
-            setData(data.data.data);
+            const res=await axios.put(`http://localhost:5000/api/Books/${form.bookId}`,form);
+            console.log(res.data);
+            setMsg(res.data.msg);
+            setData(res.data.data);
         }catch(err){
-            setMsg(data.msg);
-            console.log("ERROR");
+            console.log("ERR");
         }
-        
     }
-
     return(
         <>
         <form onSubmit={handleSubmit}>
@@ -53,5 +49,5 @@ export default function Add(){
             </div>
         )}
         </>
-    );
+    )
 }
