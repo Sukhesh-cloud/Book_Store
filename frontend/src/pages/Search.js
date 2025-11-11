@@ -27,13 +27,13 @@ export default function Search(){
 
     return(
         <>
-        <form onSubmit={handleSearch}>
-            <input type='number' name='bookId' value={bookId} onChange={handleChange} placeholder='Enter Book Id to Search'></input>
+        <form onSubmit={handleSearch} className='container border shadow bg-light'>
+            <input type='number' name='bookId' value={bookId} onChange={handleChange} placeholder='Enter Book Id to Search'></input><br/><br/>
             <button type='submit'>SEARCH</button>
         </form>
         {msg && <p>{msg}</p>}
         {book &&(
-            <div>
+            <div className='card shadow-sm mb-3'>
                 <p>{book.bookName}</p>
                 <p>{book.bookId}</p>
                 <p>{book.pubName}</p>

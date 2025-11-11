@@ -29,8 +29,8 @@ export default function ViewAll(){
         {msg && <p>{msg}</p>}
 
       {data.length > 0 ? (
-        <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", width: "100%" }}>
-          <thead>
+        <table border="1" cellPadding="8" className='table table-bordered table-striped table-hover table-success'>
+          <thead className="table-dark">
             <tr>
               <th>Book ID</th>
               <th>Book Name</th>
