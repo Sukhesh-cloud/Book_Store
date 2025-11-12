@@ -16,7 +16,7 @@ export default function Update(){
     const handleSubmit=async (e)=>{
         e.preventDefault();
         try{
-            const res=await axios.put(`http://localhost:5000/api/Books/${form.bookId}`,form);
+            const res=await axios.put(`${API}/${form.bookId}`,form);
             console.log(res.data);
             setMsg(res.data.msg);
             setData(res.data.data);

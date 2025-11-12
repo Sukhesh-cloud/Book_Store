@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
   
 const bookSchema=new mongoose.Schema({
     bookName:{type:String,required:true},
-    bookId:{type:Number,required:true},
+    bookId:{type:Number,required:true,unique:true},
     pubName:{type:String,required:true},
     dop:{type:Date,required:true},
     noPages:{type:Number,required:true},
